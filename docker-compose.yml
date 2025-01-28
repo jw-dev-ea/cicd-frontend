@@ -1,0 +1,13 @@
+version: '3'
+services:
+  backend:
+    image: jonathanwengel/cicd-backend:latest
+    ports:
+      - "3000:3000"
+
+  frontend:
+    image: cicd-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
